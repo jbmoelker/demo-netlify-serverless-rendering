@@ -1,7 +1,4 @@
-const routePattern = `/.netlify/functions/echo/hello-world`
-
 exports.handler = (event, context, callback) => {
-    const { path } = event
     const route = event.path
         .replace(/^\/\.netlify\/functions/, '')
         .replace(/^\/[a-z-]+\//, '')
