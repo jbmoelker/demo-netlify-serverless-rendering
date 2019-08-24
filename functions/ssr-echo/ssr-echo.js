@@ -1,7 +1,8 @@
 exports.handler = (event, context, callback) => {
     const route = event.path
         .replace(/^\/\.netlify\/functions/, '')
-        .replace(/^\/[a-z-]+\//, '')
+        .replace(/^\/[a-z-]+/, '')
+        .replace(/^\//, '')
 
     const title = route.replace('-', ' ', 'g')
     const body = `
