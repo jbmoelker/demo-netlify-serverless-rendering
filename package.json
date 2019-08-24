@@ -1,0 +1,21 @@
+{
+  "name": "demo-netlify-serverless-rendering",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "npm-recursive-install --rootDir=functions --production",
+    "prebuild": "rm -rf dist/",
+    "build": "cp -r src/ dist/",
+    "dev": "netlify dev",
+    "start": "serve 'src/' -l 4343"
+  },
+  "keywords": [],
+  "author": "Jasper Moelker <jasper@voorhoede.nl> (https://voorhoede.nl/)",
+  "license": "MIT",
+  "devDependencies": {
+    "netlify-cli": "^2.12.0",
+    "recursive-install": "^1.4.0",
+    "serve": "^11.1.0"
+  }
+}

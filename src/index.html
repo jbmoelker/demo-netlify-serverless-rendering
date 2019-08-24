@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Demo Netlify Redirect To Function</title>
+</head>
+<body>
+    <h1>Static HTML page</h1>
+    <nav>
+        <li>
+            <h2>Dynamic HTML page rendered by simple Netlify function</h2>
+            <a href="/echo/hello-world">
+                <code>/echo/*</code>
+            </a>
+            <p>Change <code>*</code> to anything to see the result.</p>
+        </li>
+        <li>
+            <h2>Dynamic HTML page rendered by Express in Netlify function</h2>
+            <a href="/express/hello-world">
+                <code>/express/*</code>
+            </a>
+            <p>Change <code>*</code> to anything to see the result.</p>
+        </li>
+    </nav>
+</body>
+</html>

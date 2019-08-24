@@ -1,0 +1,19 @@
+[build]
+  command = "npm run build"
+  publish = "dist/"
+  functions = "functions/"
+
+[dev]
+  command = "npm start"
+  port = 4343
+  publish = "src/"
+
+[[redirects]]
+  from = "/express/*"
+  to = "/.netlify/functions/express/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/echo/*"
+  to = "/.netlify/functions/ssr-echo/:splat"
+  status = 200
