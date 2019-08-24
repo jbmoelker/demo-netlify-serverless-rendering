@@ -19,6 +19,11 @@
   status = 200
 
 [[redirects]]
+  from = "/nuxt/*"
+  to = "/.netlify/functions/nuxt/:splat"
+  status = 200
+
+[[redirects]]
   from = "/*"
-  to = "/.netlify/functions/ssr-echo/:splat"
+  to = "/.netlify/functions/nuxt/:splat"
   status = 200

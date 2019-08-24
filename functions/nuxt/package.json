@@ -1,0 +1,16 @@
+{
+  "name": "nuxt-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "nuxt.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Jasper Moelker <jasper@voorhoede.nl> (https://voorhoede.nl/)",
+  "license": "MIT",
+  "dependencies": {
+    "nuxt": "^2.9.1",
+    "nuxt-start": "^2.9.1"
+  }
+}
