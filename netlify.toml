@@ -17,3 +17,8 @@
   from = "/echo/*"
   to = "/.netlify/functions/ssr-echo/:splat"
   status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/ssr-echo/:splat"
+  status = 200

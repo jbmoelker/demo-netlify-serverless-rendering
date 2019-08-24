@@ -1,10 +1,10 @@
-const functionName = 'ssr-echo'
+const routePattern = `/.netlify/functions/echo/hello-world`
 
 exports.handler = (event, context, callback) => {
     const { path } = event
     const route = event.path
-        .replace('/.netlify/functions', '')
-        .replace(`/${functionName}/`, '')
+        .replace(/^\/\.netlify\/functions/, '')
+        .replace(/^\/[a-z-]+\//, '')
 
     const title = route.replace('-', ' ', 'g')
     const body = `
