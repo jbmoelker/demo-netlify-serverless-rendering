@@ -1,13 +1,14 @@
 const functionName = 'ssr-echo'
-const baseRoute = process.env.NODE_ENV === 'dev'
-    ? `/${functionName}/`
-    : `/.netlify/functions/${functionName}/`
 
 exports.handler = (event, context, callback) => {
-    const route = event.path.slice(baseRoute.length)
-    const title = `${route.replace('-', ' ', 'g')} back `.toUpperCase()
+    const { path } = event
+    const route = event.path
+        .replace('/.netlify/functions', '')
+        .replace(`/${functionName}/`, '')
+
+    const title = route.replace('-', ' ', 'g')
     const body = `
-        <h1>${ title }</h1>
+        <h1>"${ title }" back</h1>
     `
     callback(null, { statusCode: 200, body })
 }
