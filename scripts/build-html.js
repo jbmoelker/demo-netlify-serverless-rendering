@@ -14,5 +14,5 @@ pages.forEach(generateStaticPage)
 function generateStaticPage (page) {
     request(app)
         .get(page)
-        .then(({ text }) => fsExtra.outputFile(`${outputDir}${page}/index.html`, `pre-generated:\n${text}`))
+        .then(({ text }) => fsExtra.outputFile(`${outputDir}${page}/index.html`, text))
 }

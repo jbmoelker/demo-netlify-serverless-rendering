@@ -4,7 +4,7 @@ const compression = require("compression")
 const nunjucks = require('nunjucks')
 
 const renderer = new nunjucks.Environment(
-    new nunjucks.FileSystemLoader(`${__dirname}/views`, {
+    new nunjucks.FileSystemLoader(`${__dirname}/`, {
         noCache: true,
         watch: false
     }),
@@ -17,7 +17,7 @@ module.exports = function expressApp() {
   app.use(compression())
 
   app.get("/*", function(req, res) {
-    const html = renderer.render('index.njk', {
+    const html = renderer.render('views/index.njk', {
       title: req.params[0]
     })
     res.send(html);
