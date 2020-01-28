@@ -1,6 +1,15 @@
 const express = require("express")
 const cors = require("cors")
 const compression = require("compression")
+const nunjucks = require('nunjucks')
+
+const renderer = new nunjucks.Environment(
+    new nunjucks.FileSystemLoader(`${__dirname}/views`, {
+        noCache: true,
+        watch: false
+    }),
+    { autoescape: true }
+)
 
 module.exports = function expressApp() {
   const app = express()
@@ -8,9 +17,10 @@ module.exports = function expressApp() {
   app.use(compression())
 
   app.get("/*", function(req, res) {
-    res.send(`
-      <h1>Express rendered: "${req.params[0]} "</h1>
-    `);
+    const html = renderer.render('index.njk', {
+      title: req.params[0]
+    })
+    res.send(html);
   })
 
   return app;
