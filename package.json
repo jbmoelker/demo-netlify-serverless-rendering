@@ -6,7 +6,7 @@
   "scripts": {
     "postinstall": "npm-recursive-install --rootDir=functions --production",
     "prebuild": "rm -rf dist/",
-    "build": "cp -r src/ dist/",
+    "build": "cp -r src/ dist/ && node scripts/build-html.js",
     "dev": "netlify dev",
     "start": "serve 'src/' -l 4343"
   },
@@ -14,8 +14,10 @@
   "author": "Jasper Moelker <jasper@voorhoede.nl> (https://voorhoede.nl/)",
   "license": "MIT",
   "devDependencies": {
+    "fs-extra": "^8.1.0",
     "netlify-cli": "^2.12.0",
     "recursive-install": "^1.4.0",
-    "serve": "^11.1.0"
+    "serve": "^11.1.0",
+    "supertest": "^4.0.2"
   }
 }
